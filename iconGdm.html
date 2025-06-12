@@ -1,459 +1,440 @@
-{\rtf1\ansi\ansicpg950\cocoartf2822
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
-{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;\red71\green138\blue206;
-\red141\green213\blue254;\red203\green203\blue202;\red109\green109\blue109;\red194\green125\blue100;\red109\green115\blue120;
-\red212\green212\blue212;\red112\green192\blue130;\red167\green197\blue151;\red184\green113\blue248;\red245\green123\blue47;
-\red54\green192\blue160;}
-{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c100000\c100000\c100000\c0;\cssrgb\c34146\c61677\c84338;
-\cssrgb\c61545\c86704\c99884;\cssrgb\c83320\c83320\c83112;\cssrgb\c50307\c50306\c50181;\cssrgb\c80772\c56796\c46790;\cssrgb\c50336\c52696\c54531;
-\cssrgb\c86465\c86464\c86248;\cssrgb\c50437\c78684\c58115;\cssrgb\c71035\c80830\c65726;\cssrgb\c77746\c54642\c98035;\cssrgb\c97756\c56070\c23668;
-\cssrgb\c23989\c78963\c69075;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww12720\viewh7240\viewkind0
-\deftab720
-\pard\pardeftab720\partightenfactor0
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gloria的海報生成器</title>
+    <link rel="icon" type="image/png" href="https://storage.googleapis.com/maker-me-space-os-us/v1/b498f828-090c-4328-9f5b-9a7428f52288/web-app-manifest-512x512.png">
+    <!-- 引入 Tailwind CSS 和 Google Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+TC:wght@400;700&family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* 整體頁面背景與字體設定 */
+        body {
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+            background: linear-gradient(135deg, #fddde6 0%, #d4eaf7 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 2rem 1rem;
+            box-sizing: border-box;
+        }
 
-\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 <!DOCTYPE\strokec5  html\strokec4 >\strokec6 \
-\pard\pardeftab720\partightenfactor0
-\cf2 \strokec7 <\strokec4 html\strokec6  \strokec5 lang\strokec7 =\strokec8 "zh-Hant"\strokec7 >\strokec6 \
-\strokec7 <\strokec4 head\strokec7 >\strokec6 \
-    \strokec7 <\strokec4 meta\strokec6  \strokec5 charset\strokec7 =\strokec8 "UTF-8"\strokec7 >\strokec6 \
-    \strokec7 <\strokec4 meta\strokec6  \strokec5 name\strokec7 =\strokec8 "viewport"\strokec6  \strokec5 content\strokec7 =\strokec8 "width=device-width, initial-scale=1.0"\strokec7 >\strokec6 \
-    \strokec7 <\strokec4 title\strokec7 >\strokec6 Gloria\uc0\u30340 \u28023 \u22577 \u29983 \u25104 \u22120 \strokec7 </\strokec4 title\strokec7 >\strokec6 \
-    \strokec7 <\strokec4 link\strokec6  \strokec5 rel\strokec7 =\strokec8 "icon"\strokec6  \strokec5 type\strokec7 =\strokec8 "image/png"\strokec6  \strokec5 href\strokec7 =\strokec8 "https://storage.googleapis.com/maker-me-space-os-us/v1/b498f828-090c-4328-9f5b-9a7428f52288/web-app-manifest-512x512.png"\strokec7 >\strokec6 \
-    \strokec9 <!-- \uc0\u24341 \u20837  Tailwind CSS \u21644  Google Fonts -->\strokec6 \
-    \strokec7 <\strokec4 script\strokec6  \strokec5 src\strokec7 =\strokec8 "https://cdn.tailwindcss.com"\strokec7 ></\strokec4 script\strokec7 >\strokec6 \
-    \strokec7 <\strokec4 link\strokec6  \strokec5 rel\strokec7 =\strokec8 "preconnect"\strokec6  \strokec5 href\strokec7 =\strokec8 "https://fonts.googleapis.com"\strokec7 >\strokec6 \
-    \strokec7 <\strokec4 link\strokec6  \strokec5 rel\strokec7 =\strokec8 "preconnect"\strokec6  \strokec5 href\strokec7 =\strokec8 "https://fonts.gstatic.com"\strokec6  \strokec5 crossorigin\strokec7 >\strokec6 \
-    \strokec7 <\strokec4 link\strokec6  \strokec5 href\strokec7 =\strokec8 "https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+TC:wght@400;700&family=Nunito+Sans:wght@400;700&display=swap"\strokec6  \strokec5 rel\strokec7 =\strokec8 "stylesheet"\strokec7 >\strokec6 \
-    \strokec7 <\strokec4 style\strokec7 >\strokec6 \
-        \strokec9 /* \uc0\u25972 \u39636 \u38913 \u38754 \u32972 \u26223 \u33287 \u23383 \u39636 \u35373 \u23450  */\strokec6 \
-        \strokec4 body\strokec6  \strokec10 \{\strokec6 \
-            \strokec5 font-family:\strokec6  \strokec11 'Inter'\strokec10 ,\strokec6  \strokec11 'Noto Sans TC'\strokec10 ,\strokec6  \strokec8 sans-serif\strokec10 ;\strokec6 \
-            \strokec5 background:\strokec6  \strokec8 linear-gradient(\strokec12 135deg\strokec10 ,\strokec6  #fddde6 \strokec12 0%\strokec10 ,\strokec6  #d4eaf7 \strokec12 100%\strokec8 )\strokec10 ;\strokec6 \
-            \strokec5 display:\strokec6  \strokec8 flex\strokec10 ;\strokec6 \
-            \strokec5 flex-direction:\strokec6  \strokec8 column\strokec10 ;\strokec6 \
-            \strokec5 justify-content:\strokec6  \strokec8 flex-start\strokec10 ;\strokec6 \
-            \strokec5 align-items:\strokec6  \strokec8 center\strokec10 ;\strokec6 \
-            \strokec5 min-height:\strokec6  \strokec12 100vh\strokec10 ;\strokec6 \
-            \strokec5 margin:\strokec6  \strokec12 0\strokec10 ;\strokec6 \
-            \strokec5 padding:\strokec6  \strokec12 2rem\strokec6  \strokec12 1rem\strokec10 ;\strokec6 \
-            \strokec5 box-sizing:\strokec6  \strokec8 border-box\strokec10 ;\strokec6 \
-        \strokec10 \}\strokec6 \
-\
-        \strokec9 /* \uc0\u29983 \u25104 \u22120 \u20027 \u23481 \u22120  */\strokec6 \
-        \strokec4 .generator-container\strokec6  \strokec10 \{\strokec6 \
-            \strokec5 background-color:\strokec6  \strokec8 rgba(\strokec12 255\strokec10 ,\strokec6  \strokec12 255\strokec10 ,\strokec6  \strokec12 255\strokec10 ,\strokec6  \strokec12 0.9\strokec8 )\strokec10 ;\strokec6 \
-            \strokec5 padding:\strokec6  \strokec12 2rem\strokec10 ;\strokec6 \
-            \strokec5 border-radius:\strokec6  \strokec12 20px\strokec10 ;\strokec6 \
-            \strokec5 box-shadow:\strokec6  \strokec12 0\strokec6  \strokec12 15px\strokec6  \strokec12 30px\strokec6  \strokec8 rgba(\strokec12 0\strokec10 ,\strokec6  \strokec12 0\strokec10 ,\strokec6  \strokec12 0\strokec10 ,\strokec6  \strokec12 0.15\strokec8 )\strokec10 ;\strokec6 \
-            \strokec5 margin-bottom:\strokec6  \strokec12 2rem\strokec10 ;\strokec6 \
-            \strokec5 width:\strokec6  \strokec12 100%\strokec10 ;\strokec6 \
-            \strokec5 max-width:\strokec6  \strokec12 600px\strokec10 ;\strokec6 \
-            \strokec5 backdrop-filter:\strokec6  \strokec8 blur(\strokec12 10px\strokec8 )\strokec10 ;\strokec6 \
-            \strokec5 border:\strokec6  \strokec12 1px\strokec6  \strokec8 solid\strokec6  \strokec8 rgba(\strokec12 255\strokec10 ,\strokec6  \strokec12 255\strokec10 ,\strokec6  \strokec12 255\strokec10 ,\strokec6  \strokec12 0.2\strokec8 )\strokec10 ;\strokec6 \
-        \strokec10 \}\strokec6 \
-        \
-        \strokec9 /* \uc0\u27161 \u38988 \u27171 \u24335  (\u24050 \u26356 \u26032 ) */\strokec6 \
-        \strokec4 .generator-title\strokec6  \strokec10 \{\strokec6 \
-            \strokec5 font-size:\strokec6  \strokec12 2.8rem\strokec10 ;\strokec6 \
-            \strokec5 font-weight:\strokec6  \strokec12 700\strokec10 ;\strokec6 \
-            \strokec5 color:\strokec6  #5e35b1\strokec10 ;\strokec6  \strokec9 /* \uc0\u28145 \u32043 \u33394  */\strokec6 \
-            \strokec5 text-align:\strokec6  \strokec8 center\strokec10 ;\strokec6 \
-            \strokec5 text-shadow:\strokec6  \strokec12 1px\strokec6  \strokec12 1px\strokec6  \strokec12 2px\strokec6  \strokec8 rgba(\strokec12 0\strokec10 ,\strokec6  \strokec12 0\strokec10 ,\strokec6  \strokec12 0\strokec10 ,\strokec6  \strokec12 0.1\strokec8 )\strokec10 ;\strokec6 \
-            \strokec5 background-color:\strokec6  #f3e5f5\strokec10 ;\strokec6  \strokec9 /* \uc0\u28154 \u32043 \u33394 \u32972 \u26223  */\strokec6 \
-            \strokec5 padding:\strokec6  \strokec12 0.75rem\strokec6  \strokec12 2rem\strokec10 ;\strokec6 \
-            \strokec5 border-radius:\strokec6  \strokec12 20px\strokec10 ;\strokec6 \
-            \strokec5 box-shadow:\strokec6  \strokec12 0\strokec6  \strokec12 5px\strokec6  \strokec12 15px\strokec6  \strokec8 rgba(\strokec12 0\strokec10 ,\strokec6  \strokec12 0\strokec10 ,\strokec6  \strokec12 0\strokec10 ,\strokec6  \strokec12 0.1\strokec8 )\strokec10 ;\strokec6 \
-            \strokec5 display:\strokec6  \strokec8 inline-block\strokec10 ;\strokec6  \strokec9 /* \uc0\u35731 \u32972 \u26223 \u21253 \u35065 \u25991 \u23383  */\strokec6 \
-            \strokec5 border:\strokec6  \strokec12 1px\strokec6  \strokec8 solid\strokec6  \strokec8 rgba(\strokec12 94\strokec10 ,\strokec6  \strokec12 53\strokec10 ,\strokec6  \strokec12 177\strokec10 ,\strokec6  \strokec12 0.1\strokec8 )\strokec10 ;\strokec6 \
-        \strokec10 \}\strokec6 \
-\
-        \strokec9 /* \uc0\u36664 \u20837 \u21312 \u22602 \u21345 \u29255  */\strokec6 \
-        \strokec4 .input-card\strokec6  \strokec10 \{\strokec6 \
-            \strokec5 background-color:\strokec6  \strokec8 rgba(\strokec12 255\strokec10 ,\strokec6  \strokec12 255\strokec10 ,\strokec6  \strokec12 255\strokec10 ,\strokec6  \strokec12 0.8\strokec8 )\strokec10 ;\strokec6 \
-            \strokec5 padding:\strokec6  \strokec12 1.5rem\strokec10 ;\strokec6 \
-            \strokec5 margin-bottom:\strokec6  \strokec12 1rem\strokec10 ;\strokec6 \
-            \strokec5 border-radius:\strokec6  \strokec12 15px\strokec10 ;\strokec6 \
-            \strokec5 border:\strokec6  \strokec12 1px\strokec6  \strokec8 solid\strokec6  #eee\strokec10 ;\strokec6 \
-            \strokec5 transition:\strokec6  \strokec8 box-shadow\strokec6  \strokec12 0.3s\strokec6  \strokec8 ease\strokec10 ;\strokec6 \
-        \strokec10 \}\strokec6 \
-        \strokec4 .input-card:focus-within\strokec6  \strokec10 \{\strokec6 \
-             \strokec5 box-shadow:\strokec6  \strokec12 0\strokec6  \strokec12 0\strokec6  \strokec12 15px\strokec6  \strokec8 rgba(\strokec12 216\strokec10 ,\strokec6  \strokec12 27\strokec10 ,\strokec6  \strokec12 96\strokec10 ,\strokec6  \strokec12 0.2\strokec8 )\strokec10 ;\strokec6 \
-        \strokec10 \}\strokec6 \
-\
-        \strokec4 .input-card\strokec6  \strokec4 label\strokec6  \strokec10 \{\strokec6 \
-            \strokec5 display:\strokec6  \strokec8 block\strokec10 ;\strokec6 \
-            \strokec5 margin-bottom:\strokec6  \strokec12 0.5rem\strokec10 ;\strokec6 \
-            \strokec5 font-weight:\strokec6  \strokec12 700\strokec10 ;\strokec6 \
-            \strokec5 color:\strokec6  #555\strokec10 ;\strokec6 \
-            \strokec5 font-size:\strokec6  \strokec12 1rem\strokec10 ;\strokec6 \
-        \strokec10 \}\strokec6 \
-\
-        \strokec4 .input-card\strokec6  \strokec4 input\strokec10 ,\strokec6  \strokec4 .input-card\strokec6  \strokec4 select\strokec6  \strokec10 \{\strokec6 \
-            \strokec5 width:\strokec6  \strokec12 100%\strokec10 ;\strokec6 \
-            \strokec5 padding:\strokec6  \strokec12 0.75rem\strokec10 ;\strokec6 \
-            \strokec5 border:\strokec6  \strokec12 1px\strokec6  \strokec8 solid\strokec6  #ccc\strokec10 ;\strokec6 \
-            \strokec5 border-radius:\strokec6  \strokec12 8px\strokec10 ;\strokec6 \
-            \strokec5 font-size:\strokec6  \strokec12 1rem\strokec10 ;\strokec6 \
-            \strokec5 transition:\strokec6  \strokec8 border-color\strokec6  \strokec12 0.3s\strokec6  \strokec8 ease\strokec10 ;\strokec6 \
-        \strokec10 \}\strokec6 \
-        \strokec4 .input-card\strokec6  \strokec4 input:focus\strokec10 ,\strokec6  \strokec4 .input-card\strokec6  \strokec4 select:focus\strokec6  \strokec10 \{\strokec6 \
-            \strokec5 outline:\strokec6  \strokec8 none\strokec10 ;\strokec6 \
-            \strokec5 border-color:\strokec6  #d81b60\strokec10 ;\strokec6 \
-        \strokec10 \}\strokec6 \
-        \
-        \strokec9 /* \uc0\u26085 \u26399 \u36984 \u25799 \u22120 \u27171 \u24335  */\strokec6 \
-        \strokec4 .date-picker-container\strokec6  \strokec10 \{\strokec6 \
-            \strokec5 display:\strokec6  \strokec8 flex\strokec10 ;\strokec6 \
-            \strokec5 align-items:\strokec6  \strokec8 center\strokec10 ;\strokec6 \
-            \strokec5 gap:\strokec6  \strokec12 1rem\strokec10 ;\strokec6 \
-        \strokec10 \}\strokec6 \
-        \strokec4 #date-input\strokec6  \strokec10 \{\strokec6 \
-            \strokec5 color:\strokec6  #333\strokec10 ;\strokec6  \strokec9 /* \uc0\u30906 \u20445 \u36984 \u20013 \u26085 \u26399 \u24460 \u25991 \u23383 \u21487 \u35211  */\strokec6 \
-        \strokec10 \}\strokec6 \
-        \strokec4 #date-display\strokec6  \strokec10 \{\strokec6 \
-            \strokec5 font-weight:\strokec6  \strokec8 bold\strokec10 ;\strokec6 \
-            \strokec5 color:\strokec6  #d81b60\strokec10 ;\strokec6 \
-        \strokec10 \}\strokec6 \
-        \
-        \strokec9 /* \uc0\u27284 \u26696 \u19978 \u20659 \u25353 \u37397  */\strokec6 \
-        \strokec4 .upload-area\strokec6  \strokec10 \{\strokec6 \
-            \strokec5 display:\strokec6  \strokec8 flex\strokec10 ;\strokec6 \
-            \strokec5 align-items:\strokec6  \strokec8 center\strokec10 ;\strokec6 \
-            \strokec5 gap:\strokec6  \strokec12 1rem\strokec10 ;\strokec6 \
-        \strokec10 \}\strokec6 \
-        \
-        \strokec4 #lecturer-image-preview\strokec6  \strokec10 \{\strokec6 \
-            \strokec5 width:\strokec6  \strokec12 100px\strokec10 ;\strokec6 \
-            \strokec5 height:\strokec6  \strokec12 133px\strokec10 ;\strokec6 \
-            \strokec5 object-fit:\strokec6  \strokec8 cover\strokec10 ;\strokec6 \
-            \strokec5 border-radius:\strokec6  \strokec12 8px\strokec10 ;\strokec6 \
-            \strokec5 border:\strokec6  \strokec12 2px\strokec6  \strokec8 dashed\strokec6  #ccc\strokec10 ;\strokec6 \
-            \strokec5 background-color:\strokec6  #f8f8f8\strokec10 ;\strokec6 \
-        \strokec10 \}\strokec6 \
-\
-        \strokec9 /* \uc0\u25805 \u20316 \u25353 \u37397 \u36890 \u29992 \u27171 \u24335  */\strokec6 \
-        \strokec4 .action-button\strokec6  \strokec10 \{\strokec6 \
-            \strokec5 color:\strokec6  \strokec8 white\strokec10 ;\strokec6 \
-            \strokec5 padding:\strokec6  \strokec12 1rem\strokec6  \strokec12 1.5rem\strokec10 ;\strokec6 \
-            \strokec5 border:\strokec6  \strokec8 none\strokec10 ;\strokec6 \
-            \strokec5 border-radius:\strokec6  \strokec12 12px\strokec10 ;\strokec6 \
-            \strokec5 cursor:\strokec6  \strokec8 pointer\strokec10 ;\strokec6 \
-            \strokec5 font-size:\strokec6  \strokec12 1.2rem\strokec10 ;\strokec6 \
-            \strokec5 font-weight:\strokec6  \strokec12 700\strokec10 ;\strokec6 \
-            \strokec5 width:\strokec6  \strokec12 100%\strokec10 ;\strokec6 \
-            \strokec5 transition:\strokec6  \strokec8 transform\strokec6  \strokec12 0.2s\strokec6  \strokec8 ease\strokec10 ,\strokec6  \strokec8 box-shadow\strokec6  \strokec12 0.2s\strokec6  \strokec8 ease\strokec10 ;\strokec6 \
-            \strokec5 text-align:\strokec6  \strokec8 center\strokec10 ;\strokec6 \
-        \strokec10 \}\strokec6 \
-\
-        \strokec9 /* \uc0\u29983 \u25104 \u25353 \u37397  */\strokec6 \
-        \strokec4 .generate-button\strokec6  \strokec10 \{\strokec6 \
-            \strokec5 background:\strokec6  \strokec8 linear-gradient(\strokec12 45deg\strokec10 ,\strokec6  #d81b60\strokec10 ,\strokec6  #f48fb1\strokec8 )\strokec10 ;\strokec6 \
-            \strokec5 box-shadow:\strokec6  \strokec12 0\strokec6  \strokec12 4px\strokec6  \strokec12 15px\strokec6  \strokec8 rgba(\strokec12 216\strokec10 ,\strokec6  \strokec12 27\strokec10 ,\strokec6  \strokec12 96\strokec10 ,\strokec6  \strokec12 0.3\strokec8 )\strokec10 ;\strokec6 \
-        \strokec10 \}\strokec6 \
-        \strokec4 .generate-button:hover\strokec6  \strokec10 \{\strokec6  \strokec5 transform:\strokec6  \strokec8 translateY(\strokec12 -2px\strokec8 )\strokec10 ;\strokec6  \strokec5 box-shadow:\strokec6  \strokec12 0\strokec6  \strokec12 6px\strokec6  \strokec12 20px\strokec6  \strokec8 rgba(\strokec12 216\strokec10 ,\strokec6  \strokec12 27\strokec10 ,\strokec6  \strokec12 96\strokec10 ,\strokec6  \strokec12 0.4\strokec8 )\strokec10 ;\strokec6  \strokec10 \}\strokec6 \
-        \
-        \strokec9 /* \uc0\u21015 \u21360 \u25353 \u37397  */\strokec6 \
-        \strokec4 .print-button\strokec6  \strokec10 \{\strokec6 \
-            \strokec5 background:\strokec6  \strokec8 linear-gradient(\strokec12 45deg\strokec10 ,\strokec6  #42a5f5\strokec10 ,\strokec6  #90caf9\strokec8 )\strokec10 ;\strokec6 \
-            \strokec5 box-shadow:\strokec6  \strokec12 0\strokec6  \strokec12 4px\strokec6  \strokec12 15px\strokec6  \strokec8 rgba(\strokec12 66\strokec10 ,\strokec6  \strokec12 165\strokec10 ,\strokec6  \strokec12 245\strokec10 ,\strokec6  \strokec12 0.3\strokec8 )\strokec10 ;\strokec6 \
-        \strokec10 \}\strokec6 \
-        \strokec4 .print-button:hover\strokec6  \strokec10 \{\strokec6  \strokec5 transform:\strokec6  \strokec8 translateY(\strokec12 -2px\strokec8 )\strokec10 ;\strokec6  \strokec5 box-shadow:\strokec6  \strokec12 0\strokec6  \strokec12 6px\strokec6  \strokec12 20px\strokec6  \strokec8 rgba(\strokec12 66\strokec10 ,\strokec6  \strokec12 165\strokec10 ,\strokec6  \strokec12 245\strokec10 ,\strokec6  \strokec12 0.4\strokec8 )\strokec10 ;\strokec6  \strokec10 \}\strokec6 \
-\
-\
-        \strokec9 /* \uc0\u28023 \u22577 \u38928 \u35261 \u23481 \u22120  */\strokec6 \
-        \strokec4 #poster-preview-container\strokec6  \strokec10 \{\strokec6 \
-            \strokec5 margin-top:\strokec6  \strokec12 1rem\strokec10 ;\strokec6 \
-            \strokec5 border:\strokec6  \strokec12 1px\strokec6  \strokec8 solid\strokec6  #DDD\strokec10 ;\strokec6 \
-            \strokec5 box-shadow:\strokec6  \strokec12 0\strokec6  \strokec12 10px\strokec6  \strokec12 25px\strokec6  \strokec8 rgba(\strokec12 0\strokec10 ,\strokec6  \strokec12 0\strokec10 ,\strokec6  \strokec12 0\strokec10 ,\strokec6  \strokec12 0.15\strokec8 )\strokec10 ;\strokec6 \
-            \strokec5 border-radius:\strokec6  \strokec12 15px\strokec10 ;\strokec6 \
-            \strokec5 overflow:\strokec6  \strokec8 hidden\strokec10 ;\strokec6 \
-            \strokec5 width:\strokec6  \strokec12 100%\strokec10 ;\strokec6 \
-            \strokec5 max-width:\strokec6  \strokec12 500px\strokec10 ;\strokec6 \
-            \strokec5 background-color:\strokec6  #fff\strokec10 ;\strokec6 \
-            \strokec5 transition:\strokec6  \strokec8 aspect-ratio\strokec6  \strokec12 0.4s\strokec6  \strokec8 ease\strokec10 ,\strokec6  \strokec8 max-width\strokec6  \strokec12 0.4s\strokec6  \strokec8 ease\strokec10 ;\strokec6 \
-        \strokec10 \}\strokec6 \
-\
-        \strokec4 #poster-preview-iframe\strokec6  \strokec10 \{\strokec6  \strokec5 width:\strokec6  \strokec12 100%\strokec10 ;\strokec6  \strokec5 height:\strokec6  \strokec12 100%\strokec10 ;\strokec6  \strokec5 border:\strokec6  \strokec8 none\strokec10 ;\strokec6  \strokec10 \}\strokec6 \
-    \strokec7 </\strokec4 style\strokec7 >\strokec6 \
-\strokec7 </\strokec4 head\strokec7 >\strokec6 \
-\strokec7 <\strokec4 body\strokec7 >\strokec6 \
-    \strokec7 <\strokec4 div\strokec6  \strokec5 class\strokec7 =\strokec8 "generator-container"\strokec7 >\strokec6 \
-        \strokec7 <\strokec4 div\strokec6  \strokec5 class\strokec7 =\strokec8 "w-full text-center mb-8"\strokec7 >\strokec6 \
-            \strokec7 <\strokec4 h1\strokec6  \strokec5 class\strokec7 =\strokec8 "generator-title"\strokec7 >\strokec6 Gloria\uc0\u30340 \u28023 \u22577 \u29983 \u25104 \u22120 \strokec7 </\strokec4 h1\strokec7 >\strokec6 \
-        \strokec7 </\strokec4 div\strokec7 >\strokec6 \
-\
-        \strokec7 <\strokec4 div\strokec6  \strokec5 class\strokec7 =\strokec8 "grid grid-cols-1 md:grid-cols-2 gap-4"\strokec7 >\strokec6 \
-            \strokec7 <\strokec4 div\strokec6  \strokec5 class\strokec7 =\strokec8 "input-card"\strokec7 ><\strokec4 label\strokec6  \strokec5 for\strokec7 =\strokec8 "event-title"\strokec7 >\strokec6 \uc0\u27963 \u21205 \u20027 \u38988 \u65306 \strokec7 </\strokec4 label\strokec7 ><\strokec4 input\strokec6  \strokec5 type\strokec7 =\strokec8 "text"\strokec6  \strokec5 id\strokec7 =\strokec8 "event-title"\strokec6  \strokec5 placeholder\strokec7 =\strokec8 "\uc0\u35531 \u36664 \u20837 \u27963 \u21205 \u20027 \u38988 "\strokec6  \strokec5 value\strokec7 =\strokec8 ""\strokec7 ></\strokec4 div\strokec7 >\strokec6 \
-            \strokec7 <\strokec4 div\strokec6  \strokec5 class\strokec7 =\strokec8 "input-card"\strokec7 ><\strokec4 label\strokec6  \strokec5 for\strokec7 =\strokec8 "speaker"\strokec7 >\strokec6 \uc0\u35611 \u24107 \u65306 \strokec7 </\strokec4 label\strokec7 ><\strokec4 input\strokec6  \strokec5 type\strokec7 =\strokec8 "text"\strokec6  \strokec5 id\strokec7 =\strokec8 "speaker"\strokec6  \strokec5 placeholder\strokec7 =\strokec8 "\uc0\u35531 \u36664 \u20837 \u35611 \u24107 \u22995 \u21517 "\strokec6  \strokec5 value\strokec7 =\strokec8 ""\strokec7 ></\strokec4 div\strokec7 >\strokec6 \
-            \strokec7 <\strokec4 div\strokec6  \strokec5 class\strokec7 =\strokec8 "input-card"\strokec7 >\strokec6 \
-                \strokec7 <\strokec4 label\strokec6  \strokec5 for\strokec7 =\strokec8 "date-input"\strokec7 >\strokec6 \uc0\u26085 \u26399 \u65306 \strokec7 </\strokec4 label\strokec7 >\strokec6 \
-                \strokec7 <\strokec4 div\strokec6  \strokec5 class\strokec7 =\strokec8 "date-picker-container"\strokec7 >\strokec6 \
-                    \strokec7 <\strokec4 input\strokec6  \strokec5 type\strokec7 =\strokec8 "date"\strokec6  \strokec5 id\strokec7 =\strokec8 "date-input"\strokec7 >\strokec6 \
-                    \strokec7 <\strokec4 span\strokec6  \strokec5 id\strokec7 =\strokec8 "date-display"\strokec7 ></\strokec4 span\strokec7 >\strokec6 \
-                \strokec7 </\strokec4 div\strokec7 >\strokec6 \
-            \strokec7 </\strokec4 div\strokec7 >\strokec6 \
-            \strokec7 <\strokec4 div\strokec6  \strokec5 class\strokec7 =\strokec8 "input-card"\strokec7 ><\strokec4 label\strokec6  \strokec5 for\strokec7 =\strokec8 "time"\strokec7 >\strokec6 \uc0\u26178 \u38291 \u65306 \strokec7 </\strokec4 label\strokec7 ><\strokec4 input\strokec6  \strokec5 type\strokec7 =\strokec8 "text"\strokec6  \strokec5 id\strokec7 =\strokec8 "time"\strokec6  \strokec5 placeholder\strokec7 =\strokec8 "\uc0\u35531 \u36664 \u20837 \u26178 \u38291 "\strokec6  \strokec5 value\strokec7 =\strokec8 ""\strokec7 ></\strokec4 div\strokec7 >\strokec6 \
-        \strokec7 </\strokec4 div\strokec7 >\strokec6 \
-\
-        \strokec7 <\strokec4 div\strokec6  \strokec5 class\strokec7 =\strokec8 "input-card"\strokec7 ><\strokec4 label\strokec6  \strokec5 for\strokec7 =\strokec8 "location"\strokec7 >\strokec6 \uc0\u23526 \u39636 \u25110 \u32218 \u19978 meet\u65306 \strokec7 </\strokec4 label\strokec7 ><\strokec4 input\strokec6  \strokec5 type\strokec7 =\strokec8 "text"\strokec6  \strokec5 id\strokec7 =\strokec8 "location"\strokec6  \strokec5 placeholder\strokec7 =\strokec8 "\uc0\u22320 \u40670 \u25110 Meet\u32178 \u22336 "\strokec6  \strokec5 value\strokec7 =\strokec8 ""\strokec7 ></\strokec4 div\strokec7 >\strokec6 \
-        \
-        \strokec7 <\strokec4 div\strokec6  \strokec5 class\strokec7 =\strokec8 "input-card"\strokec7 >\strokec6 \
-            \strokec7 <\strokec4 label\strokec6  \strokec5 for\strokec7 =\strokec8 "lecturer-image"\strokec7 >\strokec6 \uc0\u35611 \u24107 \u38957 \u20687 \u19978 \u20659 \u65306 \strokec7 </\strokec4 label\strokec7 >\strokec6 \
-            \strokec7 <\strokec4 div\strokec6  \strokec5 class\strokec7 =\strokec8 "upload-area"\strokec7 >\strokec6 \
-                \strokec7 <\strokec4 input\strokec6  \strokec5 type\strokec7 =\strokec8 "file"\strokec6  \strokec5 id\strokec7 =\strokec8 "lecturer-image"\strokec6  \strokec5 accept\strokec7 =\strokec8 "image/*"\strokec7 >\strokec6 \
-                \strokec7 <\strokec4 img\strokec6  \strokec5 id\strokec7 =\strokec8 "lecturer-image-preview"\strokec6  \strokec5 src\strokec7 =\strokec8 "https://placehold.co/300x400/EFEFEF/AAAAAA?text=\uc0\u38928 \u35261 "\strokec6  \strokec5 alt\strokec7 =\strokec8 "\uc0\u35611 \u24107 \u38957 \u20687 \u38928 \u35261 "\strokec7 >\strokec6 \
-            \strokec7 </\strokec4 div\strokec7 >\strokec6 \
-        \strokec7 </\strokec4 div\strokec7 >\strokec6 \
-        \
-        \strokec7 <\strokec4 div\strokec6  \strokec5 class\strokec7 =\strokec8 "grid grid-cols-1 md:grid-cols-2 gap-4"\strokec7 >\strokec6 \
-            \strokec7 <\strokec4 div\strokec6  \strokec5 class\strokec7 =\strokec8 "input-card"\strokec7 >\strokec6 \
-                \strokec7 <\strokec4 label\strokec6  \strokec5 for\strokec7 =\strokec8 "avatar-ratio"\strokec7 >\strokec6 \uc0\u38957 \u20687 \u27604 \u20363 \u65306 \strokec7 </\strokec4 label\strokec7 >\strokec6 \
-                \strokec7 <\strokec4 select\strokec6  \strokec5 id\strokec7 =\strokec8 "avatar-ratio"\strokec7 >\strokec6 \
-                    \strokec7 <\strokec4 option\strokec6  \strokec5 value\strokec7 =\strokec8 "portrait"\strokec7 >\strokec6 \uc0\u30452 \u24335  (9:16)\strokec7 </\strokec4 option\strokec7 >\strokec6 \
-                    \strokec7 <\strokec4 option\strokec6  \strokec5 value\strokec7 =\strokec8 "square"\strokec7 >\strokec6 \uc0\u26041 \u24418  (1:1)\strokec7 </\strokec4 option\strokec7 >\strokec6 \
-                \strokec7 </\strokec4 select\strokec7 >\strokec6 \
-            \strokec7 </\strokec4 div\strokec7 >\strokec6 \
-             \strokec7 <\strokec4 div\strokec6  \strokec5 class\strokec7 =\strokec8 "input-card"\strokec7 >\strokec6 \
-                \strokec7 <\strokec4 label\strokec6  \strokec5 for\strokec7 =\strokec8 "poster-size"\strokec7 >\strokec6 \uc0\u28023 \u22577 \u23610 \u23544 \u65306 \strokec7 </\strokec4 label\strokec7 >\strokec6 \
-                \strokec7 <\strokec4 select\strokec6  \strokec5 id\strokec7 =\strokec8 "poster-size"\strokec7 >\strokec6 \
-                    \strokec7 <\strokec4 option\strokec6  \strokec5 value\strokec7 =\strokec8 "9/16"\strokec7 >\strokec6 \uc0\u30452 \u24335  (9:16)\strokec7 </\strokec4 option\strokec7 >\strokec6 \
-                    \strokec7 <\strokec4 option\strokec6  \strokec5 value\strokec7 =\strokec8 "16/9"\strokec7 >\strokec6 \uc0\u27243 \u24335  (16:9)\strokec7 </\strokec4 option\strokec7 >\strokec6 \
-                \strokec7 </\strokec4 select\strokec7 >\strokec6 \
-            \strokec7 </\strokec4 div\strokec7 >\strokec6 \
-        \strokec7 </\strokec4 div\strokec7 >\strokec6 \
-\
-        \strokec7 <\strokec4 div\strokec6  \strokec5 class\strokec7 =\strokec8 "grid grid-cols-1 md:grid-cols-2 gap-4"\strokec7 >\strokec6 \
-            \strokec7 <\strokec4 div\strokec6  \strokec5 class\strokec7 =\strokec8 "input-card"\strokec7 >\strokec6 \
-                \strokec7 <\strokec4 label\strokec6  \strokec5 for\strokec7 =\strokec8 "style"\strokec7 >\strokec6 \uc0\u38957 \u20687 \u39080 \u26684 \u65306 \strokec7 </\strokec4 label\strokec7 >\strokec6 \
-                \strokec7 <\strokec4 select\strokec6  \strokec5 id\strokec7 =\strokec8 "style"\strokec7 >\strokec6 \
-                    \strokec7 <\strokec4 option\strokec6  \strokec5 value\strokec7 =\strokec8 "realistic"\strokec7 >\strokec6 \uc0\u28961 \u28670 \u37857  (\u23531 \u23526 )\strokec7 </\strokec4 option\strokec7 >\strokec6 \
-                    \strokec7 <\strokec4 option\strokec6  \strokec5 value\strokec7 =\strokec8 "cartoon"\strokec7 >\strokec6 \uc0\u28459 \u30059 \u39080 \u26684 \strokec7 </\strokec4 option\strokec7 >\strokec6 \
-                    \strokec7 <\strokec4 option\strokec6  \strokec5 value\strokec7 =\strokec8 "illustration"\strokec7 >\strokec6 \uc0\u25554 \u30059 \u39080 \u26684 \strokec7 </\strokec4 option\strokec7 >\strokec6 \
-                    \strokec7 <\strokec4 option\strokec6  \strokec5 value\strokec7 =\strokec8 "ghibli"\strokec7 >\strokec6 \uc0\u23470 \u23822 \u39423 \u21205 \u28459 \strokec7 </\strokec4 option\strokec7 >\strokec6 \
-                    \strokec7 <\strokec4 option\strokec6  \strokec5 value\strokec7 =\strokec8 "3d-doll"\strokec7 >\strokec6 3D\uc0\u23043 \u23043 \strokec7 </\strokec4 option\strokec7 >\strokec6 \
-                    \strokec7 <\strokec4 option\strokec6  \strokec5 value\strokec7 =\strokec8 "vangogh"\strokec7 >\strokec6 \uc0\u26805 \u35895 \u21517 \u30059 \strokec7 </\strokec4 option\strokec7 >\strokec6 \
-                \strokec7 </\strokec4 select\strokec7 >\strokec6 \
-            \strokec7 </\strokec4 div\strokec7 >\strokec6 \
-            \strokec7 <\strokec4 div\strokec6  \strokec5 class\strokec7 =\strokec8 "input-card"\strokec7 >\strokec6 \
-                \strokec7 <\strokec4 label\strokec6  \strokec5 for\strokec7 =\strokec8 "poster-background"\strokec7 >\strokec6 \uc0\u28023 \u22577 \u32972 \u26223 \u65306 \strokec7 </\strokec4 label\strokec7 >\strokec6 \
-                \strokec7 <\strokec4 select\strokec6  \strokec5 id\strokec7 =\strokec8 "poster-background"\strokec7 >\strokec6 \
-                    \strokec7 <\strokec4 option\strokec6  \strokec5 value\strokec7 =\strokec8 "default"\strokec7 >\strokec6 \uc0\u38928 \u35373  (\u30333 \u24213 )\strokec7 </\strokec4 option\strokec7 >\strokec6 \
-                    \strokec7 <\strokec4 option\strokec6  \strokec5 value\strokec7 =\strokec8 "miyazaki"\strokec7 >\strokec6 \uc0\u23470 \u23822 \u39423 \u21205 \u28459 \u39080 \u26684 \strokec7 </\strokec4 option\strokec7 >\strokec6 \
-                    \strokec7 <\strokec4 option\strokec6  \strokec5 value\strokec7 =\strokec8 "nile"\strokec7 >\strokec6 \uc0\u23612 \u32645 \u27827 \u22899 \u20818 \u39080 \u26684 \strokec7 </\strokec4 option\strokec7 >\strokec6 \
-                    \strokec7 <\strokec4 option\strokec6  \strokec5 value\strokec7 =\strokec8 "solid"\strokec7 >\strokec6 \uc0\u38568 \u27231 \u21934 \u33394 \strokec7 </\strokec4 option\strokec7 >\strokec6 \
-                    \strokec7 <\strokec4 option\strokec6  \strokec5 value\strokec7 =\strokec8 "gradient"\strokec7 >\strokec6 \uc0\u38568 \u27231 \u28472 \u23652 \strokec7 </\strokec4 option\strokec7 >\strokec6 \
-                    \strokec7 <\strokec4 option\strokec6  \strokec5 value\strokec7 =\strokec8 "famous_painting"\strokec7 >\strokec6 \uc0\u19990 \u30028 \u21517 \u30059 \u39080 \u26684 \strokec7 </\strokec4 option\strokec7 >\strokec6 \
-                \strokec7 </\strokec4 select\strokec7 >\strokec6 \
-            \strokec7 </\strokec4 div\strokec7 >\strokec6 \
-        \strokec7 </\strokec4 div\strokec7 >\strokec6 \
-\
-\
-        \strokec7 <\strokec4 div\strokec6  \strokec5 class\strokec7 =\strokec8 "grid grid-cols-1 md:grid-cols-2 gap-4"\strokec7 >\strokec6 \
-            \strokec7 <\strokec4 div\strokec6  \strokec5 class\strokec7 =\strokec8 "input-card !p-0"\strokec7 ><\strokec4 button\strokec6  \strokec5 class\strokec7 =\strokec8 "action-button generate-button"\strokec6  \strokec5 onclick\strokec7 =\strokec8 "generatePoster()"\strokec7 >\strokec6 \uc0\u10024  \u29983 \u25104 \u28023 \u22577  \u10024 \strokec7 </\strokec4 button\strokec7 ></\strokec4 div\strokec7 >\strokec6 \
-            \strokec7 <\strokec4 div\strokec6  \strokec5 class\strokec7 =\strokec8 "input-card !p-0"\strokec7 ><\strokec4 button\strokec6  \strokec5 class\strokec7 =\strokec8 "action-button print-button"\strokec6  \strokec5 onclick\strokec7 =\strokec8 "printPoster()"\strokec7 >\strokec6 \uc0\u55357 \u56744 \u65039  \u21015 \u21360 \u28023 \u22577 \strokec7 </\strokec4 button\strokec7 ></\strokec4 div\strokec7 >\strokec6 \
-        \strokec7 </\strokec4 div\strokec7 >\strokec6 \
-    \strokec7 </\strokec4 div\strokec7 >\strokec6 \
-\
-    \strokec7 <\strokec4 div\strokec6  \strokec5 id\strokec7 =\strokec8 "poster-preview-container"\strokec7 >\strokec6 \
-        \strokec7 <\strokec4 iframe\strokec6  \strokec5 id\strokec7 =\strokec8 "poster-preview-iframe"\strokec6  \strokec5 title\strokec7 =\strokec8 "\uc0\u28023 \u22577 \u38928 \u35261 "\strokec7 ></\strokec4 iframe\strokec7 >\strokec6 \
-    \strokec7 </\strokec4 div\strokec7 >\strokec6 \
-\
-    \strokec7 <\strokec4 script\strokec7 >\strokec6 \
-        \strokec9 // --- Event Listeners ---\strokec6 \
-        window\strokec10 .\strokec6 onload \strokec10 =\strokec6  \strokec13 function\strokec10 ()\strokec6  \strokec10 \{\strokec6 \
-            updatePosterSize\strokec10 ();\strokec6  \strokec9 // Set initial poster size\strokec6 \
-            generatePoster\strokec10 ();\strokec6 \
-        \strokec10 \};\strokec6 \
-    \
-        document\strokec10 .\strokec6 getElementById\strokec10 (\strokec11 'lecturer-image'\strokec10 ).\strokec6 addEventListener\strokec10 (\strokec11 'change'\strokec10 ,\strokec6  \strokec13 function\strokec10 ()\strokec6  \strokec10 \{\strokec6 \
-            \strokec13 const\strokec6  file \strokec10 =\strokec6  \strokec13 this\strokec10 .\strokec6 files \strokec10 &&\strokec6  \strokec13 this\strokec10 .\strokec6 files\strokec10 .\strokec6 length \strokec10 >\strokec6  \strokec14 0\strokec6  \strokec10 ?\strokec6  \strokec13 this\strokec10 .\strokec6 files\strokec10 [\strokec14 0\strokec10 ]\strokec6  \strokec10 :\strokec6  \strokec13 null\strokec10 ;\strokec6 \
-            \strokec13 if\strokec6  \strokec10 (\strokec6 file\strokec10 )\strokec6  \strokec10 \{\strokec6 \
-                \strokec13 const\strokec6  reader \strokec10 =\strokec6  \strokec13 new\strokec6  \strokec15 FileReader\strokec10 ();\strokec6 \
-                reader\strokec10 .\strokec6 onload \strokec10 =\strokec6  \strokec13 function\strokec10 (\strokec6 e\strokec10 )\strokec6  \strokec10 \{\strokec6 \
-                    document\strokec10 .\strokec6 getElementById\strokec10 (\strokec11 'lecturer-image-preview'\strokec10 ).\strokec6 src \strokec10 =\strokec6  e\strokec10 .\strokec6 target\strokec10 .\strokec6 result\strokec10 ;\strokec6 \
-                \strokec10 \}\strokec6 \
-                reader\strokec10 .\strokec6 readAsDataURL\strokec10 (\strokec6 file\strokec10 );\strokec6 \
-            \strokec10 \}\strokec6 \
-        \strokec10 \});\strokec6 \
-        \
-        document\strokec10 .\strokec6 getElementById\strokec10 (\strokec11 'date-input'\strokec10 ).\strokec6 addEventListener\strokec10 (\strokec11 'change'\strokec10 ,\strokec6  updateDateDisplay\strokec10 );\strokec6 \
-        document\strokec10 .\strokec6 getElementById\strokec10 (\strokec11 'poster-size'\strokec10 ).\strokec6 addEventListener\strokec10 (\strokec11 'change'\strokec10 ,\strokec6  updatePosterSize\strokec10 );\strokec6 \
-\
-        \strokec9 // --- Core Functions ---\strokec6 \
-        \strokec13 function\strokec6  updateDateDisplay\strokec10 ()\strokec6  \strokec10 \{\strokec6 \
-            \strokec13 const\strokec6  dateInput \strokec10 =\strokec6  document\strokec10 .\strokec6 getElementById\strokec10 (\strokec11 'date-input'\strokec10 );\strokec6 \
-            \strokec13 const\strokec6  dateDisplay \strokec10 =\strokec6  document\strokec10 .\strokec6 getElementById\strokec10 (\strokec11 'date-display'\strokec10 );\strokec6 \
-            \strokec13 if\strokec6  \strokec10 (\strokec6 dateInput\strokec10 .\strokec6 value\strokec10 )\strokec6  \strokec10 \{\strokec6 \
-                \strokec13 const\strokec6  dateValue \strokec10 =\strokec6  dateInput\strokec10 .\strokec6 value\strokec10 ;\strokec6 \
-                \strokec13 const\strokec6  \strokec10 [\strokec6 year\strokec10 ,\strokec6  month\strokec10 ,\strokec6  day\strokec10 ]\strokec6  \strokec10 =\strokec6  dateValue\strokec10 .\strokec6 split\strokec10 (\strokec11 '-'\strokec10 ).\strokec6 map\strokec10 (\strokec15 Number\strokec10 );\strokec6 \
-                \strokec13 const\strokec6  date \strokec10 =\strokec6  \strokec13 new\strokec6  \strokec15 Date\strokec10 (\strokec15 Date\strokec10 .\strokec15 UTC\strokec10 (\strokec6 year\strokec10 ,\strokec6  month \strokec10 -\strokec6  \strokec14 1\strokec10 ,\strokec6  day\strokec10 ));\strokec6 \
-                \
-                \strokec13 const\strokec6  options \strokec10 =\strokec6  \strokec10 \{\strokec6  year\strokec10 :\strokec6  \strokec11 'numeric'\strokec10 ,\strokec6  month\strokec10 :\strokec6  \strokec11 'long'\strokec10 ,\strokec6  day\strokec10 :\strokec6  \strokec11 'numeric'\strokec10 ,\strokec6  weekday\strokec10 :\strokec6  \strokec11 'long'\strokec10 ,\strokec6  timeZone\strokec10 :\strokec6  \strokec11 'UTC'\strokec6  \strokec10 \};\strokec6 \
-                dateDisplay\strokec10 .\strokec6 textContent \strokec10 =\strokec6  \strokec13 new\strokec6  \strokec15 Intl\strokec10 .\strokec15 DateTimeFormat\strokec10 (\strokec11 'zh-Hant-TW'\strokec10 ,\strokec6  options\strokec10 ).\strokec6 format\strokec10 (\strokec6 date\strokec10 );\strokec6 \
-            \strokec10 \}\strokec6  \strokec13 else\strokec6  \strokec10 \{\strokec6 \
-                dateDisplay\strokec10 .\strokec6 textContent \strokec10 =\strokec6  \strokec11 ''\strokec10 ;\strokec6 \
-            \strokec10 \}\strokec6 \
-        \strokec10 \}\strokec6 \
-        \
-        \strokec13 function\strokec6  updatePosterSize\strokec10 ()\strokec6  \strokec10 \{\strokec6 \
-            \strokec13 const\strokec6  size \strokec10 =\strokec6  document\strokec10 .\strokec6 getElementById\strokec10 (\strokec11 'poster-size'\strokec10 ).\strokec6 value\strokec10 ;\strokec6 \
-            \strokec13 const\strokec6  container \strokec10 =\strokec6  document\strokec10 .\strokec6 getElementById\strokec10 (\strokec11 'poster-preview-container'\strokec10 );\strokec6 \
-            container\strokec10 .\strokec6 style\strokec10 .\strokec6 aspectRatio \strokec10 =\strokec6  size\strokec10 ;\strokec6 \
-            \
-            \strokec13 if\strokec6  \strokec10 (\strokec6 size \strokec10 ===\strokec6  \strokec11 '16/9'\strokec10 )\strokec6  \strokec10 \{\strokec6 \
-                container\strokec10 .\strokec6 style\strokec10 .\strokec6 maxWidth \strokec10 =\strokec6  \strokec11 '800px'\strokec10 ;\strokec6 \
-            \strokec10 \}\strokec6  \strokec13 else\strokec6  \strokec10 \{\strokec6 \
-                container\strokec10 .\strokec6 style\strokec10 .\strokec6 maxWidth \strokec10 =\strokec6  \strokec11 '500px'\strokec10 ;\strokec6 \
-            \strokec10 \}\strokec6 \
-        \strokec10 \}\strokec6 \
-\
-        \strokec13 function\strokec6  generatePoster\strokec10 ()\strokec6  \strokec10 \{\strokec6 \
-            \strokec13 const\strokec6  data \strokec10 =\strokec6  \strokec10 \{\strokec6 \
-                eventTitle\strokec10 :\strokec6  document\strokec10 .\strokec6 getElementById\strokec10 (\strokec11 'event-title'\strokec10 ).\strokec6 value \strokec10 ||\strokec6  \strokec11 '\uc0\u35531 \u36664 \u20837 \u20027 \u38988 '\strokec10 ,\strokec6 \
-                speaker\strokec10 :\strokec6  document\strokec10 .\strokec6 getElementById\strokec10 (\strokec11 'speaker'\strokec10 ).\strokec6 value \strokec10 ||\strokec6  \strokec11 '\uc0\u24453 \u23450 \u35611 \u24107 '\strokec10 ,\strokec6 \
-                date\strokec10 :\strokec6  document\strokec10 .\strokec6 getElementById\strokec10 (\strokec11 'date-display'\strokec10 ).\strokec6 textContent \strokec10 ||\strokec6  \strokec11 '\uc0\u24453 \u23450 \u26085 \u26399 '\strokec10 ,\strokec6 \
-                time\strokec10 :\strokec6  document\strokec10 .\strokec6 getElementById\strokec10 (\strokec11 'time'\strokec10 ).\strokec6 value \strokec10 ||\strokec6  \strokec11 '\uc0\u24453 \u23450 \u26178 \u38291 '\strokec10 ,\strokec6 \
-                location\strokec10 :\strokec6  document\strokec10 .\strokec6 getElementById\strokec10 (\strokec11 'location'\strokec10 ).\strokec6 value \strokec10 ||\strokec6  \strokec11 '\uc0\u24453 \u23450 \u22320 \u40670 '\strokec10 ,\strokec6 \
-                lecturerImage\strokec10 :\strokec6  document\strokec10 .\strokec6 getElementById\strokec10 (\strokec11 'lecturer-image-preview'\strokec10 ).\strokec6 src\strokec10 ,\strokec6 \
-                style\strokec10 :\strokec6  document\strokec10 .\strokec6 getElementById\strokec10 (\strokec11 'style'\strokec10 ).\strokec6 value\strokec10 ,\strokec6 \
-                avatarRatio\strokec10 :\strokec6  document\strokec10 .\strokec6 getElementById\strokec10 (\strokec11 'avatar-ratio'\strokec10 ).\strokec6 value\strokec10 ,\strokec6 \
-                posterSize\strokec10 :\strokec6  document\strokec10 .\strokec6 getElementById\strokec10 (\strokec11 'poster-size'\strokec10 ).\strokec6 value\strokec10 ,\strokec6 \
-                background\strokec10 :\strokec6  document\strokec10 .\strokec6 getElementById\strokec10 (\strokec11 'poster-background'\strokec10 ).\strokec6 value\
-            \strokec10 \};\strokec6 \
-\
-            \strokec13 const\strokec6  posterHTML \strokec10 =\strokec6  getPosterHTML\strokec10 (\strokec6 data\strokec10 );\strokec6 \
-            \strokec13 const\strokec6  iframe \strokec10 =\strokec6  document\strokec10 .\strokec6 getElementById\strokec10 (\strokec11 'poster-preview-iframe'\strokec10 );\strokec6 \
-            iframe\strokec10 .\strokec6 srcdoc \strokec10 =\strokec6  posterHTML\strokec10 ;\strokec6 \
-        \strokec10 \}\strokec6 \
-\
-        \strokec13 function\strokec6  printPoster\strokec10 ()\strokec6  \strokec10 \{\strokec6 \
-            \strokec13 const\strokec6  iframe \strokec10 =\strokec6  document\strokec10 .\strokec6 getElementById\strokec10 (\strokec11 'poster-preview-iframe'\strokec10 );\strokec6 \
-            \strokec13 if\strokec6  \strokec10 (\strokec6 iframe \strokec10 &&\strokec6  iframe\strokec10 .\strokec6 contentWindow\strokec10 )\strokec6  \strokec10 \{\strokec6 \
-                iframe\strokec10 .\strokec6 contentWindow\strokec10 .\strokec6 focus\strokec10 ();\strokec6 \
-                iframe\strokec10 .\strokec6 contentWindow\strokec10 .\strokec6 print\strokec10 ();\strokec6 \
-            \strokec10 \}\strokec6  \strokec13 else\strokec6  \strokec10 \{\strokec6 \
-                alert\strokec10 (\strokec11 "\uc0\u28961 \u27861 \u21015 \u21360 \u65292 \u28023 \u22577 \u38928 \u35261 \u23578 \u26410 \u28310 \u20633 \u22909 \u12290 "\strokec10 );\strokec6 \
-            \strokec10 \}\strokec6 \
-        \strokec10 \}\strokec6 \
-        \
-        \strokec9 // --- Helper functions for styles ---\strokec6 \
-\
-        \strokec13 function\strokec6  getAvatarFilter\strokec10 (\strokec6 style\strokec10 )\strokec6  \strokec10 \{\strokec6 \
-            \strokec13 switch\strokec10 (\strokec6 style\strokec10 )\strokec6  \strokec10 \{\strokec6 \
-                \strokec13 case\strokec6  \strokec11 'cartoon'\strokec10 :\strokec6  \strokec13 return\strokec6  \strokec11 'filter: grayscale(1) brightness(1.2) contrast(1.5);'\strokec10 ;\strokec6 \
-                \strokec13 case\strokec6  \strokec11 'illustration'\strokec10 :\strokec6  \strokec13 return\strokec6  \strokec11 'filter: sepia(0.5) saturate(1.4) brightness(1.1);'\strokec10 ;\strokec6 \
-                \strokec13 case\strokec6  \strokec11 'ghibli'\strokec10 :\strokec6  \strokec13 return\strokec6  \strokec11 'filter: saturate(1.2) contrast(1.1) brightness(1.1);'\strokec10 ;\strokec6 \
-                \strokec13 case\strokec6  \strokec11 '3d-doll'\strokec10 :\strokec6  \strokec13 return\strokec6  \strokec11 'filter: saturate(1.5) brightness(1.1);'\strokec10 ;\strokec6 \
-                \strokec13 case\strokec6  \strokec11 'vangogh'\strokec10 :\strokec6  \strokec13 return\strokec6  \strokec11 'filter: contrast(1.4) saturate(1.8) sepia(0.3) hue-rotate(-10deg);'\strokec10 ;\strokec6 \
-                \strokec13 case\strokec6  \strokec11 'realistic'\strokec10 :\strokec6 \
-                \strokec13 default\strokec10 :\strokec6  \strokec13 return\strokec6  \strokec11 'filter: none;'\strokec10 ;\strokec6 \
-            \strokec10 \}\strokec6 \
-        \strokec10 \}\strokec6 \
-        \
-        \strokec13 function\strokec6  getBackgroundStyle\strokec10 (\strokec6 background\strokec10 )\strokec6  \strokec10 \{\strokec6 \
-            \strokec13 const\strokec6  randomColor \strokec10 =\strokec6  \strokec10 ()\strokec6  \strokec10 =>\strokec6  \strokec11 '#'\strokec6  \strokec10 +\strokec6  \strokec15 Math\strokec10 .\strokec6 floor\strokec10 (\strokec15 Math\strokec10 .\strokec6 random\strokec10 ()*\strokec14 16777215\strokec10 ).\strokec6 toString\strokec10 (\strokec14 16\strokec10 ).\strokec6 padStart\strokec10 (\strokec14 6\strokec10 ,\strokec6  \strokec11 '0'\strokec10 );\strokec6 \
-            \strokec13 const\strokec6  getTextColor \strokec10 =\strokec6  \strokec10 (\strokec6 bgColor\strokec10 )\strokec6  \strokec10 =>\strokec6  \strokec10 \{\strokec6 \
-                \strokec13 const\strokec6  color \strokec10 =\strokec6  \strokec10 (\strokec6 bgColor\strokec10 .\strokec6 charAt\strokec10 (\strokec14 0\strokec10 )\strokec6  \strokec10 ===\strokec6  \strokec11 '#'\strokec10 )\strokec6  \strokec10 ?\strokec6  bgColor\strokec10 .\strokec6 substring\strokec10 (\strokec14 1\strokec10 ,\strokec6  \strokec14 7\strokec10 )\strokec6  \strokec10 :\strokec6  bgColor\strokec10 ;\strokec6 \
-                \strokec13 const\strokec6  r \strokec10 =\strokec6  parseInt\strokec10 (\strokec6 color\strokec10 .\strokec6 substring\strokec10 (\strokec14 0\strokec10 ,\strokec6  \strokec14 2\strokec10 ),\strokec6  \strokec14 16\strokec10 );\strokec6 \
-                \strokec13 const\strokec6  g \strokec10 =\strokec6  parseInt\strokec10 (\strokec6 color\strokec10 .\strokec6 substring\strokec10 (\strokec14 2\strokec10 ,\strokec6  \strokec14 4\strokec10 ),\strokec6  \strokec14 16\strokec10 );\strokec6 \
-                \strokec13 const\strokec6  b \strokec10 =\strokec6  parseInt\strokec10 (\strokec6 color\strokec10 .\strokec6 substring\strokec10 (\strokec14 4\strokec10 ,\strokec6  \strokec14 6\strokec10 ),\strokec6  \strokec14 16\strokec10 );\strokec6 \
-                \strokec13 return\strokec6  \strokec10 (((\strokec6 r \strokec10 *\strokec6  \strokec14 299\strokec10 )\strokec6  \strokec10 +\strokec6  \strokec10 (\strokec6 g \strokec10 *\strokec6  \strokec14 587\strokec10 )\strokec6  \strokec10 +\strokec6  \strokec10 (\strokec6 b \strokec10 *\strokec6  \strokec14 114\strokec10 ))\strokec6  \strokec10 /\strokec6  \strokec14 1000\strokec10 )\strokec6  \strokec10 >\strokec6  \strokec14 128\strokec6  \strokec10 ?\strokec6  \strokec11 '#334155'\strokec6  \strokec10 :\strokec6  \strokec11 '#f8fafc'\strokec10 ;\strokec6 \
-            \strokec10 \};\strokec6 \
-\
-            \strokec13 switch\strokec10 (\strokec6 background\strokec10 )\strokec6  \strokec10 \{\strokec6 \
-                \strokec13 case\strokec6  \strokec11 'miyazaki'\strokec10 :\strokec6  \strokec13 return\strokec6  \strokec10 \{\strokec6  style\strokec10 :\strokec6  \strokec11 'background: linear-gradient(to bottom, #a7d9ed, #f5f0e1);'\strokec10 ,\strokec6  textColor\strokec10 :\strokec6  \strokec11 '#3d5a80'\strokec6  \strokec10 \};\strokec6 \
-                \strokec13 case\strokec6  \strokec11 'nile'\strokec10 :\strokec6  \strokec13 return\strokec6  \strokec10 \{\strokec6  style\strokec10 :\strokec6  \strokec11 'background: linear-gradient(to bottom, #3A8B9C, #E0C097, #6B2A2D);'\strokec10 ,\strokec6  textColor\strokec10 :\strokec6  \strokec11 '#FAD74B'\strokec6  \strokec10 \};\strokec6 \
-                \strokec13 case\strokec6  \strokec11 'solid'\strokec10 :\strokec6  \
-                    \strokec13 const\strokec6  solidBg \strokec10 =\strokec6  randomColor\strokec10 ();\strokec6 \
-                    \strokec13 return\strokec6  \strokec10 \{\strokec6  style\strokec10 :\strokec6  \strokec11 `background-color: \strokec10 $\{\strokec6 solidBg\strokec10 \}\strokec11 ;`\strokec10 ,\strokec6  textColor\strokec10 :\strokec6  getTextColor\strokec10 (\strokec6 solidBg\strokec10 )\strokec6  \strokec10 \};\strokec6 \
-                \strokec13 case\strokec6  \strokec11 'gradient'\strokec10 :\strokec6 \
-                    \strokec13 const\strokec6  gradBg1 \strokec10 =\strokec6  randomColor\strokec10 ();\strokec6 \
-                    \strokec13 const\strokec6  gradBg2 \strokec10 =\strokec6  randomColor\strokec10 ();\strokec6 \
-                    \strokec13 return\strokec6  \strokec10 \{\strokec6  style\strokec10 :\strokec6  \strokec11 `background: linear-gradient(135deg, \strokec10 $\{\strokec6 gradBg1\strokec10 \}\strokec11 , \strokec10 $\{\strokec6 gradBg2\strokec10 \}\strokec11 );`\strokec10 ,\strokec6  textColor\strokec10 :\strokec6  getTextColor\strokec10 (\strokec6 gradBg1\strokec10 )\strokec6  \strokec10 \};\strokec6  \strokec9 // Check against first color\strokec6 \
-                \strokec13 case\strokec6  \strokec11 'famous_painting'\strokec10 :\strokec6 \
-                    \strokec13 const\strokec6  paintings \strokec10 =\strokec6  \strokec10 [\strokec6 \
-                        \strokec10 \{\strokec6  style\strokec10 :\strokec6  \strokec11 'background: linear-gradient(to bottom, #0b1a3a, #f6d17a);'\strokec10 ,\strokec6  textColor\strokec10 :\strokec6  \strokec11 '#ffffff'\strokec6  \strokec10 \},\strokec6  \strokec9 // Starry Night\strokec6 \
-                        \strokec10 \{\strokec6  style\strokec10 :\strokec6  \strokec11 'background: linear-gradient(to bottom right, #a2d2ff, #bde0fe, #fbcfe8);'\strokec10 ,\strokec6  textColor\strokec10 :\strokec6  \strokec11 '#334155'\strokec6  \strokec10 \},\strokec6  \strokec9 // Water Lilies\strokec6 \
-                        \strokec10 \{\strokec6  style\strokec10 :\strokec6  \strokec11 'background: linear-gradient(to top, #e67e22, #f1c40f, #2980b9);'\strokec10 ,\strokec6  textColor\strokec10 :\strokec6  \strokec11 '#000000'\strokec6  \strokec10 \}\strokec6  \strokec9 // The Scream\strokec6 \
-                    \strokec10 ];\strokec6 \
-                    \strokec13 return\strokec6  paintings\strokec10 [\strokec15 Math\strokec10 .\strokec6 floor\strokec10 (\strokec15 Math\strokec10 .\strokec6 random\strokec10 ()\strokec6  \strokec10 *\strokec6  paintings\strokec10 .\strokec6 length\strokec10 )];\strokec6 \
-                \strokec13 case\strokec6  \strokec11 'default'\strokec10 :\strokec6 \
-                \strokec13 default\strokec10 :\strokec6  \strokec13 return\strokec6  \strokec10 \{\strokec6  style\strokec10 :\strokec6  \strokec11 'background-color: #ffffff;'\strokec10 ,\strokec6  textColor\strokec10 :\strokec6  \strokec11 '#334155'\strokec6  \strokec10 \};\strokec6 \
-            \strokec10 \}\strokec6 \
-        \strokec10 \}\strokec6 \
-\
-\
-        \strokec9 // --- HTML Template Function ---\strokec6 \
-\
-        \strokec13 function\strokec6  getPosterHTML\strokec10 (\strokec6 data\strokec10 )\strokec6  \strokec10 \{\strokec6 \
-            \strokec13 const\strokec6  isHorizontal \strokec10 =\strokec6  data\strokec10 .\strokec6 posterSize \strokec10 ===\strokec6  \strokec11 '16/9'\strokec10 ;\strokec6 \
-            \strokec13 const\strokec6  avatarFilter \strokec10 =\strokec6  getAvatarFilter\strokec10 (\strokec6 data\strokec10 .\strokec6 style\strokec10 );\strokec6 \
-            \strokec13 const\strokec6  \strokec10 \{\strokec6  style\strokec10 :\strokec6  backgroundStyle\strokec10 ,\strokec6  textColor \strokec10 \}\strokec6  \strokec10 =\strokec6  getBackgroundStyle\strokec10 (\strokec6 data\strokec10 .\strokec6 background\strokec10 );\strokec6 \
-\
-            \strokec13 const\strokec6  layoutClass \strokec10 =\strokec6  isHorizontal \
-                \strokec10 ?\strokec6  \strokec11 'flex-row items-center justify-center gap-8'\strokec6  \
-                \strokec10 :\strokec6  \strokec11 'flex-col items-center justify-around gap-4'\strokec10 ;\strokec6 \
-\
-            \strokec13 const\strokec6  imageContainerClass \strokec10 =\strokec6  isHorizontal \strokec10 ?\strokec6  \strokec11 'w-5/12'\strokec6  \strokec10 :\strokec6  \strokec11 'w-2/3'\strokec10 ;\strokec6 \
-            \strokec13 const\strokec6  textContainerClass \strokec10 =\strokec6  isHorizontal \strokec10 ?\strokec6  \strokec11 'w-6/12 text-left'\strokec6  \strokec10 :\strokec6  \strokec11 'w-full text-center'\strokec10 ;\strokec6 \
-            \
-            \strokec13 const\strokec6  imageSizeClass \strokec10 =\strokec6  data\strokec10 .\strokec6 avatarRatio \strokec10 ===\strokec6  \strokec11 'square'\strokec6  \strokec10 ?\strokec6  \strokec11 'aspect-square'\strokec6  \strokec10 :\strokec6  \strokec11 'aspect-[9/16]'\strokec10 ;\strokec6 \
-            \
-            \strokec13 const\strokec6  titleSizeClass \strokec10 =\strokec6  isHorizontal \strokec10 ?\strokec6  \strokec11 'text-6xl'\strokec6  \strokec10 :\strokec6  \strokec11 'text-5xl'\strokec10 ;\strokec6 \
-            \strokec13 const\strokec6  speakerSizeClass \strokec10 =\strokec6  isHorizontal \strokec10 ?\strokec6  \strokec11 'text-4xl'\strokec6  \strokec10 :\strokec6  \strokec11 'text-3xl'\strokec10 ;\strokec6 \
-\
-\
-            \strokec13 return\strokec6  \strokec11 `\strokec6 \
-\pard\pardeftab720\partightenfactor0
-\cf2 \strokec11                 <!DOCTYPE html>\strokec6 \
-\strokec11                 <html lang="zh-Hant">\strokec6 \
-\strokec11                 <head>\strokec6 \
-\strokec11                     <meta charset="UTF-8">\strokec6 \
-\strokec11                     <meta name="viewport" content="width=device-width, initial-scale=1.0">\strokec6 \
-\strokec11                     <title>\uc0\u28023 \u22577 </title>\strokec6 \
-\strokec11                     <script src="https://cdn.tailwindcss.com"><\\/script>\strokec6 \
-\strokec11                     <style>\strokec6 \
-\strokec11                         body \{ \strokec6 \
-\strokec11                             font-family:'Inter', 'Noto Sans TC', sans-serif; \strokec6 \
-\strokec11                             -webkit-print-color-adjust: exact; \strokec6 \
-\strokec11                             height: 100vh;\strokec6 \
-\strokec11                             margin: 0;\strokec6 \
-\strokec11                             color: \strokec10 $\{\strokec6 textColor\strokec10 \}\strokec11 ;\strokec6 \
-\strokec11                             \strokec10 $\{\strokec6 backgroundStyle\strokec10 \}\strokec6 \
-\strokec11                         \}\strokec6 \
-\strokec11                     </style>\strokec6 \
-\strokec11                 </head>\strokec6 \
-\strokec11                 <body class="flex items-center justify-center">\strokec6 \
-\strokec11                     <div class="w-full h-full flex \strokec10 $\{\strokec6 layoutClass\strokec10 \}\strokec11  p-8">\strokec6 \
-\strokec11                         \strokec6 \
-\strokec11                         <div class="\strokec10 $\{\strokec6 imageContainerClass\strokec10 \}\strokec11 ">\strokec6 \
-\strokec11                             <img src="\strokec10 $\{\strokec6 data\strokec10 .\strokec6 lecturerImage\strokec10 \}\strokec11 " alt="\uc0\u35611 \u24107 \u29031 \u29255 " class="w-full \strokec10 $\{\strokec6 imageSizeClass\strokec10 \}\strokec11  object-cover rounded-xl shadow-lg" style="\strokec10 $\{\strokec6 avatarFilter\strokec10 \}\strokec11 ">\strokec6 \
-\strokec11                         </div>\strokec6 \
-\
-\strokec11                         <div class="\strokec10 $\{\strokec6 textContainerClass\strokec10 \}\strokec11  flex flex-col justify-center gap-6">\strokec6 \
-\strokec11                             <h1 class="\strokec10 $\{\strokec6 titleSizeClass\strokec10 \}\strokec11  font-bold leading-tight" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.2);">\strokec10 $\{\strokec6 data\strokec10 .\strokec6 eventTitle\strokec10 \}\strokec11 </h1>\strokec6 \
-\strokec11                             \strokec6 \
-\strokec11                             <div class="mt-2">\strokec6 \
-\strokec11                                 <p class="text-xl opacity-80">\uc0\u20027 \u35611 \u20154 </p>\strokec6 \
-\strokec11                                 <p class="\strokec10 $\{\strokec6 speakerSizeClass\strokec10 \}\strokec11  font-bold" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.1);">\strokec10 $\{\strokec6 data\strokec10 .\strokec6 speaker\strokec10 \}\strokec11 </p>\strokec6 \
-\strokec11                             </div>\strokec6 \
-\strokec11                             \strokec6 \
-\strokec11                             <div class="text-xl bg-black bg-opacity-10 p-4 rounded-lg backdrop-blur-sm">\strokec6 \
-\strokec11                                 <p>\strokec10 $\{\strokec6 data\strokec10 .\strokec6 date\strokec10 \}\strokec11 </p>\strokec6 \
-\strokec11                                 <p>\strokec10 $\{\strokec6 data\strokec10 .\strokec6 time\strokec10 \}\strokec11 </p>\strokec6 \
-\strokec11                                 <p class="break-words mt-2 font-semibold">\strokec10 $\{\strokec6 data\strokec10 .\strokec6 location\strokec10 \}\strokec11 </p>\strokec6 \
-\strokec11                             </div>\strokec6 \
-\strokec11                         </div>\strokec6 \
-\
-\strokec11                     </div>\strokec6 \
-\strokec11                 </body>\strokec6 \
-\strokec11                 </html>`\strokec10 ;\strokec6 \
-        \strokec10 \}\strokec6 \
-    \strokec7 </\strokec4 script\strokec7 >\strokec6 \
-\pard\pardeftab720\partightenfactor0
-\cf2 \strokec7 </\strokec4 body\strokec7 >\strokec6 \
-\strokec7 </\strokec4 html\strokec7 >\strokec6 \
-\
-}
+        /* 生成器主容器 */
+        .generator-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            margin-bottom: 2rem;
+            width: 100%;
+            max-width: 600px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* 標題樣式 (已更新) */
+        .generator-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #5e35b1; /* 深紫色 */
+            text-align: center;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            background-color: #f3e5f5; /* 淺紫色背景 */
+            padding: 0.75rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            display: inline-block; /* 讓背景包裹文字 */
+            border: 1px solid rgba(94, 53, 177, 0.1);
+        }
+
+        /* 輸入區塊卡片 */
+        .input-card {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 15px;
+            border: 1px solid #eee;
+            transition: box-shadow 0.3s ease;
+        }
+        .input-card:focus-within {
+             box-shadow: 0 0 15px rgba(216, 27, 96, 0.2);
+        }
+
+        .input-card label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            color: #555;
+            font-size: 1rem;
+        }
+
+        .input-card input, .input-card select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        .input-card input:focus, .input-card select:focus {
+            outline: none;
+            border-color: #d81b60;
+        }
+        
+        /* 日期選擇器樣式 */
+        .date-picker-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        #date-input {
+            color: #333; /* 確保選中日期後文字可見 */
+        }
+        #date-display {
+            font-weight: bold;
+            color: #d81b60;
+        }
+        
+        /* 檔案上傳按鈕 */
+        .upload-area {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        #lecturer-image-preview {
+            width: 100px;
+            height: 133px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 2px dashed #ccc;
+            background-color: #f8f8f8;
+        }
+
+        /* 操作按鈕通用樣式 */
+        .action-button {
+            color: white;
+            padding: 1rem 1.5rem;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: 700;
+            width: 100%;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-align: center;
+        }
+
+        /* 生成按鈕 */
+        .generate-button {
+            background: linear-gradient(45deg, #d81b60, #f48fb1);
+            box-shadow: 0 4px 15px rgba(216, 27, 96, 0.3);
+        }
+        .generate-button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(216, 27, 96, 0.4); }
+        
+        /* 列印按鈕 */
+        .print-button {
+            background: linear-gradient(45deg, #42a5f5, #90caf9);
+            box-shadow: 0 4px 15px rgba(66, 165, 245, 0.3);
+        }
+        .print-button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(66, 165, 245, 0.4); }
+
+
+        /* 海報預覽容器 */
+        #poster-preview-container {
+            margin-top: 1rem;
+            border: 1px solid #DDD;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            border-radius: 15px;
+            overflow: hidden;
+            width: 100%;
+            max-width: 500px;
+            background-color: #fff;
+            transition: aspect-ratio 0.4s ease, max-width 0.4s ease;
+        }
+
+        #poster-preview-iframe { width: 100%; height: 100%; border: none; }
+    </style>
+</head>
+<body>
+    <div class="generator-container">
+        <div class="w-full text-center mb-8">
+            <h1 class="generator-title">Gloria的海報生成器</h1>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="input-card"><label for="event-title">活動主題：</label><input type="text" id="event-title" placeholder="請輸入活動主題" value=""></div>
+            <div class="input-card"><label for="speaker">講師：</label><input type="text" id="speaker" placeholder="請輸入講師姓名" value=""></div>
+            <div class="input-card">
+                <label for="date-input">日期：</label>
+                <div class="date-picker-container">
+                    <input type="date" id="date-input">
+                    <span id="date-display"></span>
+                </div>
+            </div>
+            <div class="input-card"><label for="time">時間：</label><input type="text" id="time" placeholder="請輸入時間" value=""></div>
+        </div>
+
+        <div class="input-card"><label for="location">實體或線上meet：</label><input type="text" id="location" placeholder="地點或Meet網址" value=""></div>
+        
+        <div class="input-card">
+            <label for="lecturer-image">講師頭像上傳：</label>
+            <div class="upload-area">
+                <input type="file" id="lecturer-image" accept="image/*">
+                <img id="lecturer-image-preview" src="https://placehold.co/300x400/EFEFEF/AAAAAA?text=預覽" alt="講師頭像預覽">
+            </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="input-card">
+                <label for="avatar-ratio">頭像比例：</label>
+                <select id="avatar-ratio">
+                    <option value="portrait">直式 (9:16)</option>
+                    <option value="square">方形 (1:1)</option>
+                </select>
+            </div>
+             <div class="input-card">
+                <label for="poster-size">海報尺寸：</label>
+                <select id="poster-size">
+                    <option value="9/16">直式 (9:16)</option>
+                    <option value="16/9">橫式 (16:9)</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="input-card">
+                <label for="style">頭像風格：</label>
+                <select id="style">
+                    <option value="realistic">無濾鏡 (寫實)</option>
+                    <option value="cartoon">漫畫風格</option>
+                    <option value="illustration">插畫風格</option>
+                    <option value="ghibli">宮崎駿動漫</option>
+                    <option value="3d-doll">3D娃娃</option>
+                    <option value="vangogh">梵谷名畫</option>
+                </select>
+            </div>
+            <div class="input-card">
+                <label for="poster-background">海報背景：</label>
+                <select id="poster-background">
+                    <option value="default">預設 (白底)</option>
+                    <option value="miyazaki">宮崎駿動漫風格</option>
+                    <option value="nile">尼羅河女兒風格</option>
+                    <option value="solid">隨機單色</option>
+                    <option value="gradient">隨機漸層</option>
+                    <option value="famous_painting">世界名畫風格</option>
+                </select>
+            </div>
+        </div>
+
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="input-card !p-0"><button class="action-button generate-button" onclick="generatePoster()">✨ 生成海報 ✨</button></div>
+            <div class="input-card !p-0"><button class="action-button print-button" onclick="printPoster()">🖨️ 列印海報</button></div>
+        </div>
+    </div>
+
+    <div id="poster-preview-container">
+        <iframe id="poster-preview-iframe" title="海報預覽"></iframe>
+    </div>
+
+    <script>
+        // --- Event Listeners ---
+        window.onload = function() {
+            updatePosterSize(); // Set initial poster size
+            generatePoster();
+        };
+    
+        document.getElementById('lecturer-image').addEventListener('change', function() {
+            const file = this.files && this.files.length > 0 ? this.files[0] : null;
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('lecturer-image-preview').src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+        
+        document.getElementById('date-input').addEventListener('change', updateDateDisplay);
+        document.getElementById('poster-size').addEventListener('change', updatePosterSize);
+
+        // --- Core Functions ---
+        function updateDateDisplay() {
+            const dateInput = document.getElementById('date-input');
+            const dateDisplay = document.getElementById('date-display');
+            if (dateInput.value) {
+                const dateValue = dateInput.value;
+                const [year, month, day] = dateValue.split('-').map(Number);
+                const date = new Date(Date.UTC(year, month - 1, day));
+                
+                const options = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long', timeZone: 'UTC' };
+                dateDisplay.textContent = new Intl.DateTimeFormat('zh-Hant-TW', options).format(date);
+            } else {
+                dateDisplay.textContent = '';
+            }
+        }
+        
+        function updatePosterSize() {
+            const size = document.getElementById('poster-size').value;
+            const container = document.getElementById('poster-preview-container');
+            container.style.aspectRatio = size;
+            
+            if (size === '16/9') {
+                container.style.maxWidth = '800px';
+            } else {
+                container.style.maxWidth = '500px';
+            }
+        }
+
+        function generatePoster() {
+            const data = {
+                eventTitle: document.getElementById('event-title').value || '請輸入主題',
+                speaker: document.getElementById('speaker').value || '待定講師',
+                date: document.getElementById('date-display').textContent || '待定日期',
+                time: document.getElementById('time').value || '待定時間',
+                location: document.getElementById('location').value || '待定地點',
+                lecturerImage: document.getElementById('lecturer-image-preview').src,
+                style: document.getElementById('style').value,
+                avatarRatio: document.getElementById('avatar-ratio').value,
+                posterSize: document.getElementById('poster-size').value,
+                background: document.getElementById('poster-background').value
+            };
+
+            const posterHTML = getPosterHTML(data);
+            const iframe = document.getElementById('poster-preview-iframe');
+            iframe.srcdoc = posterHTML;
+        }
+
+        function printPoster() {
+            const iframe = document.getElementById('poster-preview-iframe');
+            if (iframe && iframe.contentWindow) {
+                iframe.contentWindow.focus();
+                iframe.contentWindow.print();
+            } else {
+                alert("無法列印，海報預覽尚未準備好。");
+            }
+        }
+        
+        // --- Helper functions for styles ---
+
+        function getAvatarFilter(style) {
+            switch(style) {
+                case 'cartoon': return 'filter: grayscale(1) brightness(1.2) contrast(1.5);';
+                case 'illustration': return 'filter: sepia(0.5) saturate(1.4) brightness(1.1);';
+                case 'ghibli': return 'filter: saturate(1.2) contrast(1.1) brightness(1.1);';
+                case '3d-doll': return 'filter: saturate(1.5) brightness(1.1);';
+                case 'vangogh': return 'filter: contrast(1.4) saturate(1.8) sepia(0.3) hue-rotate(-10deg);';
+                case 'realistic':
+                default: return 'filter: none;';
+            }
+        }
+        
+        function getBackgroundStyle(background) {
+            const randomColor = () => '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+            const getTextColor = (bgColor) => {
+                const color = (bgColor.charAt(0) === '#') ? bgColor.substring(1, 7) : bgColor;
+                const r = parseInt(color.substring(0, 2), 16);
+                const g = parseInt(color.substring(2, 4), 16);
+                const b = parseInt(color.substring(4, 6), 16);
+                return (((r * 299) + (g * 587) + (b * 114)) / 1000) > 128 ? '#334155' : '#f8fafc';
+            };
+
+            switch(background) {
+                case 'miyazaki': return { style: 'background: linear-gradient(to bottom, #a7d9ed, #f5f0e1);', textColor: '#3d5a80' };
+                case 'nile': return { style: 'background: linear-gradient(to bottom, #3A8B9C, #E0C097, #6B2A2D);', textColor: '#FAD74B' };
+                case 'solid': 
+                    const solidBg = randomColor();
+                    return { style: `background-color: ${solidBg};`, textColor: getTextColor(solidBg) };
+                case 'gradient':
+                    const gradBg1 = randomColor();
+                    const gradBg2 = randomColor();
+                    return { style: `background: linear-gradient(135deg, ${gradBg1}, ${gradBg2});`, textColor: getTextColor(gradBg1) }; // Check against first color
+                case 'famous_painting':
+                    const paintings = [
+                        { style: 'background: linear-gradient(to bottom, #0b1a3a, #f6d17a);', textColor: '#ffffff' }, // Starry Night
+                        { style: 'background: linear-gradient(to bottom right, #a2d2ff, #bde0fe, #fbcfe8);', textColor: '#334155' }, // Water Lilies
+                        { style: 'background: linear-gradient(to top, #e67e22, #f1c40f, #2980b9);', textColor: '#000000' } // The Scream
+                    ];
+                    return paintings[Math.floor(Math.random() * paintings.length)];
+                case 'default':
+                default: return { style: 'background-color: #ffffff;', textColor: '#334155' };
+            }
+        }
+
+
+        // --- HTML Template Function ---
+
+        function getPosterHTML(data) {
+            const isHorizontal = data.posterSize === '16/9';
+            const avatarFilter = getAvatarFilter(data.style);
+            const { style: backgroundStyle, textColor } = getBackgroundStyle(data.background);
+
+            const layoutClass = isHorizontal 
+                ? 'flex-row items-center justify-center gap-8' 
+                : 'flex-col items-center justify-around gap-4';
+
+            const imageContainerClass = isHorizontal ? 'w-5/12' : 'w-2/3';
+            const textContainerClass = isHorizontal ? 'w-6/12 text-left' : 'w-full text-center';
+            
+            const imageSizeClass = data.avatarRatio === 'square' ? 'aspect-square' : 'aspect-[9/16]';
+            
+            const titleSizeClass = isHorizontal ? 'text-6xl' : 'text-5xl';
+            const speakerSizeClass = isHorizontal ? 'text-4xl' : 'text-3xl';
+
+
+            return `
+                <!DOCTYPE html>
+                <html lang="zh-Hant">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>海報</title>
+                    <script src="https://cdn.tailwindcss.com"><\/script>
+                    <style>
+                        body { 
+                            font-family:'Inter', 'Noto Sans TC', sans-serif; 
+                            -webkit-print-color-adjust: exact; 
+                            height: 100vh;
+                            margin: 0;
+                            color: ${textColor};
+                            ${backgroundStyle}
+                        }
+                    </style>
+                </head>
+                <body class="flex items-center justify-center">
+                    <div class="w-full h-full flex ${layoutClass} p-8">
+                        
+                        <div class="${imageContainerClass}">
+                            <img src="${data.lecturerImage}" alt="講師照片" class="w-full ${imageSizeClass} object-cover rounded-xl shadow-lg" style="${avatarFilter}">
+                        </div>
+
+                        <div class="${textContainerClass} flex flex-col justify-center gap-6">
+                            <h1 class="${titleSizeClass} font-bold leading-tight" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.2);">${data.eventTitle}</h1>
+                            
+                            <div class="mt-2">
+                                <p class="text-xl opacity-80">主講人</p>
+                                <p class="${speakerSizeClass} font-bold" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.1);">${data.speaker}</p>
+                            </div>
+                            
+                            <div class="text-xl bg-black bg-opacity-10 p-4 rounded-lg backdrop-blur-sm">
+                                <p>${data.date}</p>
+                                <p>${data.time}</p>
+                                <p class="break-words mt-2 font-semibold">${data.location}</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </body>
+                </html>`;
+        }
+    </script>
+</body>
+</html>
+
